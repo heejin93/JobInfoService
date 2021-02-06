@@ -1,20 +1,21 @@
 package com.jfs.cont
 
+import com.jfs.annotation.Logger
+import com.jfs.annotation.Logger.Companion.log
 import org.springframework.stereotype.Controller
 
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestMethod
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
-import java.util.*
 import javax.validation.Valid
 
+
 @Controller
+@Logger
 class TestCont {
-    val log: Logger = LoggerFactory.getLogger(this.javaClass)
 
     @RequestMapping(value = ["/khj93"], method = [RequestMethod.POST])
     fun khj93(@Valid @RequestBody map: Map<String,String>) : ResponseEntity<Any>{
