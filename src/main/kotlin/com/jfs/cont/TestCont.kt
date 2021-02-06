@@ -21,7 +21,7 @@ class TestCont {
         log.info(map.toString())
         val result: Map<String,String>
         result = map
-        result
+
         return ResponseEntity
             .ok()
             .body(result)
