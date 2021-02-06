@@ -22,16 +22,18 @@ spring:
             validation-interval: 30000
             remove-abandoned: true
             remove-abandoned-timeout: 60
-    mvc:
-        favicon:
-            enabled: false
+        mvc:
+            favicon:
+                enabled: false
+
 logging:
-    file:
-        path: C:/log/JobInfo/JobInfo.log
-        max-history: 7
+    file: 'C:/log/JobInfo/JobInfo.log'
     level:
         root: info
         com.jfs: debug
+    pattern:
+        file: '[%d{HH:mm:ss}][%5p][%-20F:%-3L][%X{URI}][%X{ID}][%replace(%t)] %m%n'
+        console: '[%d{HH:mm:ss}][%5p][%-20F:%-3L][%X{URI}][%X{ID}][%replace(%t)] %m%n'
 
 server:
     port: 5020
