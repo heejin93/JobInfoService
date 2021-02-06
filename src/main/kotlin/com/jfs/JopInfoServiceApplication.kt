@@ -1,4 +1,4 @@
-package com.jfs
+package com.jfs;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
@@ -7,5 +7,6 @@ import org.springframework.boot.runApplication
 class JopInfoServiceApplication
 
 fun main(args: Array<String>) {
+
     runApplication<JopInfoServiceApplication>(*args)
 }

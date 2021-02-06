@@ -1,0 +1,52 @@
+spring:
+    datasource:
+        type: org.apache.tomcat.jdbc.pool.DataSource
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://127.0.0.1:3306/JOBINFO?autoReconnect=true&characterEncoding=utf8&tcpNoDelay=true&socketTimeout=7000
+        username: root
+        password: root
+        tomcat:
+            default-transaction-isolation: -1
+            initial-size: 10
+            max-active: 20
+            min-idle: 50
+            max-idle: 120
+            max-wait: 3000
+            suspect-timeout: 60
+            time-between-eviction-runs-millis: 30000
+            min-evictable-idle-time-millis: 60000
+            test-while-idle: true
+            test-on-borrow: true
+            test-on-return: false
+            validation-query: SELECT 1
+            validation-interval: 30000
+            remove-abandoned: true
+            remove-abandoned-timeout: 60
+    mvc:
+        favicon:
+            enabled: false
+logging:
+    file:
+        path: C:/log/JobInfo/JobInfo.log
+        max-history: 7
+    level:
+        root: info
+        com.jfs: debug
+
+server:
+    port: 5020
+    servlet:
+        context-path: /JobInfo
+    tomcat:
+        max-threads: 4096
+        min-spare-threads: 10
+        max-http-post-size: -1
+        accept-count: 2000
+        accesslog:
+            enabled: true
+            directory: C:/log/JobInfo/access
+            pattern: '%{yyyy-MM-dd HH:mm:ss}t %s %r %{User-Agent}i %{Referer}i %a %b %D'
+    connection-timeout: 5000
+    compression:
+        enabled: true
+        min-response-size: 2KB
